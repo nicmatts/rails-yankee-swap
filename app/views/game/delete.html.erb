@@ -1,2 +1,14 @@
-<h1>Game#delete</h1>
-<p>Find me in app/views/game/delete.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class = "game new">
+  <h2>Delete Game</h2>
+  
+  <h2>Are you sure you want to delete <%= @game.name %></h2>
+  <%= form_for(:game, :url => {:action => 'destroy', :id => @game.id}) do |f| %>
+
+  <div class="form buttons">
+    <%= submit_tag("Delete game", :class => 'btn') %>
+  </div>
+
+  <% end %>
+</div>
