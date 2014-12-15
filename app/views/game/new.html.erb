@@ -1,2 +1,15 @@
-<h1>Game#new</h1>
-<p>Find me in app/views/game/new.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class = "game new">
+  <h2>Add Game</h2>
+
+  <%= form_for(:game, :url => {:action => 'create'}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <div class="form buttons">
+    <%= submit_tag("Add new game", :class => 'btn') %>
+  </div>
+
+  <% end %>
+</div>
