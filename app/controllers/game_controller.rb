@@ -19,9 +19,32 @@ class GameController < ApplicationController
   end
 
   def show
+    @game = Game.find(params[:id])
+  end
+
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+
+    if @game.update_attributes(game_params)
+      flash[:notice] = "#{@game.name} was updated."
+      redirect_to(:action => 'show', :id => @game.id)
+    else
+      render('edit')
+    end
   end
 
   def delete
+    @game = Game.find(params[:id])
+  end
+
+  def destroy
+    game = Game.find(params[:id]).destroy
+    flash[:notice] = "#{game.name} was deleted."
+    redirect_to(:action => 'index')
   end
 
    private
