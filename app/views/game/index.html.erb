@@ -3,7 +3,7 @@
 <table>
   <% @games.each do |game| %>
     <tr>
-      <td><%= game.name %></td>
+      <td><%= link_to(game.name, {:action => 'edit', :id => game.id}, :class => 'back-link') %></td>
     </tr>
   <% end %>
 </table>
