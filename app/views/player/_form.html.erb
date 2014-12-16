@@ -4,9 +4,11 @@
     <tr>
     <td><%= f.text_field(:name) %></td>
   </tr>
-  <tr>
-    <th><%= f.label(:turn) %></th>  </tr>
-    <tr>
-    <td><%= f.radio_button(:turn) %></td>
-  </tr>
+   <div class="field">
+    <%= f.label :turn %><br />
+    <%= f.label :turn, "Yes", :value => "true"  %>
+    <%= f.radio_button :turn, true %>
+    <%= f.label :turn, "No", :value => "false" %>
+    <%= f.radio_button :turn, false, :checked => true %>
+  </div>
 </table>

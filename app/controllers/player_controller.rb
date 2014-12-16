@@ -16,6 +16,7 @@ class PlayerController < ApplicationController
 
   def create
     @player = Player.create(player_params)
+    @player.order = Random.rand(1...1000000)
 
     if @player.save
       @player.order = Random.rand(1...1000000)
