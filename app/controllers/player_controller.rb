@@ -7,7 +7,7 @@ class PlayerController < ApplicationController
   end
 
   def show
-
+    @player = Player.find(params[:id])
   end
 
   def new
@@ -27,9 +27,28 @@ class PlayerController < ApplicationController
   end
 
   def edit
+     @player = Player.find(params[:id])
+  end
+
+  def update
+    @player = Player.find(params[:id])
+
+    if @player.update_attributes(player_params)
+      flash[:notice] = "#{@player.name} was updated."
+      redirect_to(:action => 'index')
+    else
+      render('edit')
+    end
   end
 
   def delete
+    @player = Player.find(params[:id])
+  end
+
+  def destroy
+    player = Player.find(params[:id]).destroy
+    flash[:notice] = "#{player.name} was deleted."
+    redirect_to(:action => 'index')
   end
 
   private
