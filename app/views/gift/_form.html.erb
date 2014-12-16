@@ -1,0 +1,11 @@
+<table summary = "gift form fields">
+  <tr>
+    <th><%= f.label(:name) %></th>  </tr>
+    <tr>
+    <td><%= f.text_field(:name) %></td>
+  </tr>
+   <div class="field">
+    <%= f.label :player %><br />
+    <%= f.select :player_id, options_for_select(Player.all.map{|p|[p.name, p.id]}) %>
+  </div>
+</table>
