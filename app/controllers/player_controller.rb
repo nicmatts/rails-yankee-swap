@@ -3,7 +3,7 @@ class PlayerController < ApplicationController
   attr_accessor :name, :turn, :order
 
   def index
-    @players = Player.order("order ASC")
+    @players = Player.order("turn_order ASC")
   end
 
   def show
@@ -16,7 +16,7 @@ class PlayerController < ApplicationController
 
   def create
     @player = Player.create(player_params)
-    @player.order = Random.rand(1...1000000)
+    @player.turn_order = Random.rand(1...1000000)
 
     if @player.save
       flash[:notice] = "#{@player.name} was created."
@@ -53,6 +53,6 @@ class PlayerController < ApplicationController
 
   private
     def player_params
-      params.require(:player).permit(:name, :turn, :order)
+      params.require(:player).permit(:name, :turn, :turn_order)
     end
 end
