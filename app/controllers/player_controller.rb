@@ -3,7 +3,7 @@ class PlayerController < ApplicationController
   attr_accessor :name, :turn, :order
 
   def index
-    @players = Player.order("order ASC, name ASC")
+    @players = Player.order("order ASC")
   end
 
   def show
@@ -19,7 +19,6 @@ class PlayerController < ApplicationController
     @player.order = Random.rand(1...1000000)
 
     if @player.save
-      @player.order = Random.rand(1...1000000)
       flash[:notice] = "#{@player.name} was created."
       redirect_to(:action => "index")
     else
