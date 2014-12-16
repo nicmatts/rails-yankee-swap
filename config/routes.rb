@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
 
+  get 'gift/index'
+
+  get 'gift/show'
+
+  get 'gift/new'
+
+  get 'gift/edit'
+
+  get 'gift/delete'
+
   get 'player/index'
 
   get 'player/show'
