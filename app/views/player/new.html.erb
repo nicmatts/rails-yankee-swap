@@ -7,6 +7,11 @@
 
   <%= render(:partial => "form", :locals => {:f => f}) %>
 
+  <div class="field">
+    <%= f.label :game %><br />
+    <%= f.select :game_id, options_for_select(Game.all.map{|g|[g.name, g.id]}) %>
+  </div>
+
   <div class="form buttons">
     <%= submit_tag("Add new player", :class => 'btn') %>
   </div>
