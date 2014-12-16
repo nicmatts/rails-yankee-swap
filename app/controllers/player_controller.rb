@@ -1,4 +1,7 @@
 class PlayerController < ApplicationController
+
+  attr_accessor :name, :turn, :order
+  
   def index
   end
 

@@ -1,4 +1,7 @@
 class GameController < ApplicationController
+
+  attr_accessor :name
+
   def index
     @games = Game.all
   end
