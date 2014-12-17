@@ -3,9 +3,9 @@
 one:
   name: MyString
   turn: false
-  order: 1
+  turn_order: 1
 
 two:
   name: MyString
   turn: false
-  order: 1
+  turn_order: 1
