@@ -1,8 +1,10 @@
+<table>
 <% @gifts.each do |gift| %>
   <tr>
-    <td><%= gift.name %></td>
+    <td><%=link_to(gift.name, {:action => 'edit', :id => gift.id }, :class =>'action') %></td>
     <td><%= gift.player.name %></td>
   </tr>
   <% end %>
+</table>
 
 
