@@ -1,34 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'gift/index'
-
-  get 'gift/show'
-
-  get 'gift/new'
-
-  get 'gift/edit'
-
-  get 'gift/delete'
-
-  get 'player/index'
-
-  get 'player/show'
-
-  get 'player/new'
-
-  get 'player/edit'
-
-  get 'player/delete'
-
-  get 'players/index'
-
-  get 'players/show'
-
-  get 'players/new'
-
-  get 'players/edit'
-
-  get 'players/delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
