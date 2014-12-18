@@ -3,7 +3,8 @@ class GiftController < ApplicationController
   attr_accessor :name
 
   def index
-    @gift = Gift.order("name ASC")
+    @player = Player.all
+    @gifts = Gift.order("name ASC")
   end
 
   def show
@@ -16,11 +17,13 @@ class GiftController < ApplicationController
 
   def create
     @gift = Gift.create(gift_params)
+    @player = Player.all
 
     if @gift.save
       flash[:notice] = "#{@gift.name} was created."
       redirect_to(:action => "index")
     else
+      @player = Player.all
       render("new")
     end
   end
@@ -52,6 +55,6 @@ class GiftController < ApplicationController
 
   private
     def gift_params
-      params.require(:gift).permit(:name)
+      params.require(:gift).permit(:name, :player_id)
     end
 end

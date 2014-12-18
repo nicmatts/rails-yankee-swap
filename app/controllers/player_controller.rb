@@ -4,6 +4,7 @@ class PlayerController < ApplicationController
 
   def index
     @players = Player.order("turn_order ASC")
+    @gifts = Gift.all
   end
 
   def show

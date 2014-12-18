@@ -1,9 +1,8 @@
 <h1>Players</h1>
 
-<table>
+<ol>
   <% @players.each do |player| %>
-    <tr>
-      <td><%= link_to(player.name, {:action => 'edit', :id => player.id}, :class => 'back-link') %></td>
-    </tr>
+    
+      <li><%= link_to(player.name, {:action => 'edit', :id => player.id}, :class => 'back-link') %></li>
   <% end %>
-</table>
+</ol>
