@@ -1,19 +1,15 @@
-<% @gifts.each do |gift| %>
-  <div class = "gift edit">
-  <%= gift.name %>
-  <%= form_for(:gift, :url => {:action => 'update', :id => gift.id}) do |f| %>
-  
-  <div class="field">
-    <%= f.label :player %><br />
-    <%= f.select :player_id, options_for_select(Player.all.map{|p|[p.name, p.id]}) %>
-  </div>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class = "gift edit">
+  <h2>Edit gift</h2>
+
+  <%= form_for(:gift, :url => {:action => 'update', :id => @gift.id}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
   <div class="form buttons btn">
     <%= submit_tag("Edit gift", :class => 'btn') %>
   </div>
 
   <% end %>
 </div>
-  <% end %>
-
-  <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
