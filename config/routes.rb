@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'game#index'
 
+
+  get 'login' => 'user#login'
+
+  get 'logout' => 'user#logout'
+
   match ':controller(/:action)', :via => [:get, :post]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
