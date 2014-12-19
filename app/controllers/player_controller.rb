@@ -1,5 +1,9 @@
 class PlayerController < ApplicationController
 
+  layout "application"
+
+  before_action :confirm_logged_in, :except => [:index, :show]
+
   attr_accessor :name, :turn, :order
 
   def index

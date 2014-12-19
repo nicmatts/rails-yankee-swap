@@ -1,5 +1,9 @@
 class GiftController < ApplicationController
 
+  layout "application"
+
+  before_action :confirm_logged_in, :except => [:index, :show]
+
   attr_accessor :name
 
   def index
@@ -37,7 +41,7 @@ class GiftController < ApplicationController
 
     if @gift.update_attributes(gift_params)
       flash[:notice] = "#{@gift.name} was updated."
-      redirect_to(:controller => 'game', :action => 'show', :id => @gift.player.game_id)
+      redirect_to(:action => 'index')
     else
       render('edit')
     end

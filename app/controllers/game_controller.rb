@@ -1,5 +1,9 @@
 class GameController < ApplicationController
 
+  layout "application"
+
+  before_action :confirm_logged_in, :except => [:index, :show]
+
   attr_accessor :name
 
   def index
@@ -23,7 +27,7 @@ class GameController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @players = Player.all
+    @players = Player.order("turn_order ASC")
     @gifts = Gift.all
   end
 
