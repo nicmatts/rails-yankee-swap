@@ -1,2 +1,15 @@
-<h1>Player#edit</h1>
-<p>Find me in app/views/player/edit.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class = "player edit">
+  <h2>Edit player</h2>
+
+  <%= form_for(:player, :url => {:action => 'update', :id => @player.id}) do |f| %>
+
+  <%= render(:partial => "form", :locals => {:f => f}) %>
+
+  <div class="form buttons btn">
+    <%= submit_tag("Edit player", :class => 'btn') %>
+  </div>
+
+  <% end %>
+</div>
