@@ -7,5 +7,6 @@
    <div class="field">
     <%= f.label :player %><br />
     <%= f.select :player_id, options_for_select(Player.all.map{|p|[p.name, p.id]}) %>
+    <%= f.hidden_field :game_id, :value => @gift.player.game_id%>
   </div>
 </table>

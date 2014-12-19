@@ -37,7 +37,7 @@ class GiftController < ApplicationController
 
     if @gift.update_attributes(gift_params)
       flash[:notice] = "#{@gift.name} was updated."
-      redirect_to(:action => 'index')
+      redirect_to(:controller => 'game', :action => 'show', :id => @gift.player.game_id)
     else
       render('edit')
     end
