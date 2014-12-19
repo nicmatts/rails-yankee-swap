@@ -23,6 +23,8 @@ class GameController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @players = Player.all
+    @gifts = Gift.all
   end
 
   def edit
