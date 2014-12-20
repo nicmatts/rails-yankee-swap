@@ -27,9 +27,8 @@ class GameController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    #@players = Player
     @players = @game.players.order("turn_order ASC")
-    @gifts = Gift.all
+    @gifts = @game.gifts
   end
 
   def edit
