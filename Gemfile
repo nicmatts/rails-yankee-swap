@@ -29,8 +29,6 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'friendly_id', '~> 5.0.0'
 
-# Use unicorn as the app server
-# gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,3 +43,6 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor'
 end
+
+# Use unicorn as the app server
+gem 'unicorn'
