@@ -23,7 +23,7 @@ class UserController < ApplicationController
       session[:user_id] = authorized_user.id
       session[:name] = authorized_user.name
       flash[:notice] = "You are now logged in."
-      redirect_to(:controller =>"gift", :action => "index")
+      redirect_to(:controller =>"game", :action => "index")
     else
       flash[:notice] = "Invalid name/password combination."
       redirect_to(:action => "login")
