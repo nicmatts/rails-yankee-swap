@@ -6,7 +6,6 @@
   </tr>
    <div class="field">
     <%= f.label :player %><br />
-    <%= f.select :player_id, options_for_select(Player.all.map{|p|[p.name, p.id]}.sort, [@gift.player.name]) %>
-    <%= f.hidden_field :game_id, :value => @gift.player.game_id%>
+    <%= f.select :player_id, options_for_select(Player.order("name ASC").map{|p|[p.name, p.id]}) %>
   </div>
 </table>

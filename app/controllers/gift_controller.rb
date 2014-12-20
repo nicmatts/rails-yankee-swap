@@ -21,7 +21,7 @@ class GiftController < ApplicationController
 
   def create
     @gift = Gift.create(gift_params)
-    @player = Player.all
+    @player = Player.order("name ASC")
 
     if @gift.save
       flash[:notice] = "#{@gift.name} was created."
@@ -59,6 +59,6 @@ class GiftController < ApplicationController
 
   private
     def gift_params
-      params.require(:gift).permit(:name, :player_id)
+      params.require(:gift).permit(:name, :player_id, :game_id)
     end
 end

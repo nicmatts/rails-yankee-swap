@@ -58,6 +58,6 @@ class PlayerController < ApplicationController
 
   private
     def player_params
-      params.require(:player).permit(:name, :turn, :turn_order)
+      params.require(:player).permit(:name, :turn, :turn_order, :game_id)
     end
 end
