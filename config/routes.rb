@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'logout' => 'user#logout'
 
   match ':controller(/:action)', :via => [:get, :post]
+
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
