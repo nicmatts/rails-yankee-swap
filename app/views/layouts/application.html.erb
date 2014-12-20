@@ -4,6 +4,11 @@
   <title>Yankee Swap</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <style>
+    .turn {
+      background-color: green;
+    }
+  </style>
 </head>
 <body>
 <% if !flash[:notice].blank? %>

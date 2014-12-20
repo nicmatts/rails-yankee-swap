@@ -2,7 +2,6 @@
 
 <ol>
   <% @players.each do |player| %>
-    
-      <li><%= link_to(player.name, {:action => 'edit', :id => player.id}, :class => 'back-link') %></li>
+      <li class = "<%= 'turn' if player.turn %>"><%= link_to(player.name, {:action => 'edit', :id => player.id}) %></li>
   <% end %>
 </ol>
