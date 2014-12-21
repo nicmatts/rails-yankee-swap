@@ -1,10 +1,16 @@
-<table>
-<% @gifts.each do |gift| %>
-  <tr>
-    <td><%=link_to(gift.name, {:action => 'edit', :id => gift.id }, :class =>'action') %></td>
-    <td><%= gift.player.name %></td>
-  </tr>
-  <% end %>
-</table>
+<div class="banner"><h2 class="banner"><a href="/" class="home">Mattson Gift Game</a></h2></div>
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+
+    <table class="gift-list">
+    <% @gifts.each do |gift| %>
+      <tr>
+        <td><%=link_to(gift.name, {:action => 'edit', :id => gift.id }, :class =>'action') %></td>
+        <td><%= gift.player.name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 

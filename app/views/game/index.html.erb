@@ -1,9 +1,16 @@
-<h1>Choose a game</h1>
 
-<table>
-  <% @games.each do |game| %>
-    <tr>
-      <td><%= link_to(game.name, {:action => 'show', :id => game.id}, :class => 'back-link') %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="banner"><h2 class="banner"><a href="/" class="home">Mattson Gift Game</a></h2></div>
+<div class="container">
+  <div class="col-md-4 col-md-offset-4">
+  <h1>Choose a game</h1>
+
+  <table class="game-list">
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= link_to(game.name, {:action => 'show', :id => game.id}, :class => 'back-link') %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  </div>
+</div>

@@ -3,9 +3,9 @@
     <div class="timer">
       <span class="timer-numbers"><span class="minute">01</span><span class="colon">:</span><span class="second">30</span></span>
         <div class="control">
-          <button onclick="timer.start(1000)" class="button">Start</button> 
-          <button onclick="timer.stop()" class="button">Stop</button> 
-          <button onclick="timer.reset(90)" class="button">Reset</button> 
+          <button onclick="timer.start(1000)" class="btn">Start</button> 
+          <button onclick="timer.stop()" class="btn">Stop</button> 
+          <button onclick="timer.reset(90)" class="btn">Reset</button> 
         </div>
     </div>
   </div>
@@ -13,19 +13,20 @@
 
 <div class="row">
   <div class="container game-tv">
-    <div class="col-md-4 players">
+    <div class="col-md-5 player-list">
     <h1>Players</h1>
-
-    <ol>
-      <% @players.each do |player| %>
-        <li><%= link_to(player.name, {:controller => 'player', :action => 'edit', :id => player.id}, :class => (player.turn == true ? "turn" : "")) %></li>
-      <% end %>
-    </ol>
+      <div class="players">
+      <ol>
+        <% @players.each do |player| %>
+          <li><%= link_to(player.name, {:controller => 'player', :action => 'edit', :id => player.id}, :class => (player.turn == true ? "turn" : "")) %></li>
+        <% end %>
+      </ol>
+      </div>
     </div>
 
-    <div class="col-md-8 gifts">
-      <div class="row">
-        <h1>Gifts</h1>
+    <div class="col-md-7">
+      <h1>Gifts</h1>
+        <div class="gifts">
         <dl>
         <% @gifts.each do |gift| %>
           <tr>

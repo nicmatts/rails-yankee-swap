@@ -1,15 +1,24 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 
-<div class = "game new">
+<div class="banner"><h2 class="banner"><a href="/" class="home">Mattson Gift Game</a></h2></div>
+<div class="container">
+  <div class="col-md-3 col-md-offset-5 game edit">
+
   <h2>Add Game</h2>
 
   <%= form_for(:game, :url => {:action => 'create'}) do |f| %>
 
   <%= render(:partial => "form", :locals => {:f => f}) %>
 
-  <div class="form buttons">
+  <div class="field">
+    <%= f.label :game %><br />
+    <%= f.select :game_id, options_for_select(Game.all.map{|g|[g.name, g.id]}) %>
+  </div>
+
+  <div class="form buttons btn">
     <%= submit_tag("Add new game", :class => 'btn') %>
   </div>
 
   <% end %>
+  <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+  </div>
 </div>

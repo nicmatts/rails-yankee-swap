@@ -7,5 +7,11 @@
    <div class="field">
     <%= f.label :player %><br />
     <%= f.select :player_id, options_for_select(Player.order("name ASC").map{|p|[p.name, p.id]}) %>
+
+    
+  <div class="field">
+    <%= f.label :game %><br />
+    <%= f.select :game_id, options_for_select(Game.all.map{|g|[g.name, g.id]}) %>
+  </div>
   </div>
 </table>
