@@ -102,12 +102,17 @@ table.gift-list {
   }
 
   .red-bg {
+    color: black;
     background: #be2325;
   }
 
   .white-bg {
     color: #be2325;;
     background-color: white;
+  }
+
+  .white-bg h2.banner{
+    color: black;
   }
 
   .player-list {
