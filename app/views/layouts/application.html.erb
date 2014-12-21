@@ -81,6 +81,7 @@ function _timer(callback)
         sec = (typeof(sec) !== 'undefined') ? sec : 0;
         time = sec;
         generateTime(time);
+        $( ".timer-banner" ).removeClass( "red-bg" );
     }
     
     // Change the mode of the timer, count-up (1) or countdown (0)
@@ -131,17 +132,17 @@ $(document).ready(function(e)
 {
     timer = new _timer
     (
-        function(time)
-        {
-            if(time == 0)
-            {
+        function(time){
+            if(time == 10){
+                alert('ten seconds!');
+                $( ".timer-banner" ).addClass( "red-bg" );
+            } else if (time == 0)    
                 timer.stop();
-                alert('Time is up!');
-            }
-        }
+            } 
     );
     timer.reset(90);
     timer.mode(0);
+
 });
 
 

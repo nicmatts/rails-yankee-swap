@@ -24,7 +24,35 @@ body {
   column-gap:           20px;
 }
 
+.players ol {
+  padding-left: 18px;
+}
+
 .gifts {
   column-count:         3;
   column-gap:           20px;
+}
+
+.timer-banner {
+  background: #056839;
+  padding: 1em;
+}
+
+.red-bg {
+  background: red;
+}
+
+.timer-numbers {
+  font-size: 70px;
+  color: white;
+}
+
+.control {
+  font-size: 16px;
+}
+
+@media (min-width: 780px) {
+  .game-tv {
+    font-size: 2em;
+  }
 }
