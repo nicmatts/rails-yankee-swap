@@ -8,15 +8,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if !flash[:notice].blank? %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
+
 
   <div class="row">
     <%= yield %>
   </div>
+  <% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
 
 <script>
 function _timer(callback)
