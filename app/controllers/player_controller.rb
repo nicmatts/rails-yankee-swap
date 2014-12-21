@@ -40,7 +40,7 @@ class PlayerController < ApplicationController
 
     if @player.update_attributes(player_params)
       flash[:notice] = "#{@player.name} was updated."
-      redirect_to(:action => 'index')
+      redirect_to(:controller => 'game', :action => 'show', :id => @player.game_id)
     else
       render('edit')
     end

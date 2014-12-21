@@ -19,6 +19,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+a {
+  color: #056839;
+}
+
 a.home {
   color: white;
 }
@@ -36,6 +40,11 @@ a.home {
 .players ol {
   padding-left: 0;
   list-style-position: inside;
+}
+
+.turn {
+  background-color: white;
+  padding: 6px;
 }
 
 .gifts {
