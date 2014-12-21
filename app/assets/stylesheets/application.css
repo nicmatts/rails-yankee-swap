@@ -18,3 +18,13 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.players {
+  column-count:         2;
+  column-gap:           20px;
+}
+
+.gifts {
+  column-count:         3;
+  column-gap:           20px;
+}

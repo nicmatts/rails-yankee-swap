@@ -1,5 +1,5 @@
 class GameController < ApplicationController
-
+  include UserHelper
   layout "application"
 
   before_action :confirm_logged_in, :except => [:index, :show]
@@ -29,6 +29,7 @@ class GameController < ApplicationController
     @game = Game.find(params[:id])
     @players = @game.players.order("turn_order ASC")
     @gifts = @game.gifts
+    @user = User.all
   end
 
   def edit
