@@ -105,6 +105,11 @@ table.gift-list {
     background: #be2325;
   }
 
+  .white-bg {
+    color: #be2325;;
+    background-color: white;
+  }
+
   .player-list {
     background-color: #F9D8D8;
     height: 555px;
