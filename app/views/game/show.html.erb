@@ -1,3 +1,5 @@
+<div class="col-md-6">
+
 <h1>Players</h1>
 
 <ol>
@@ -5,15 +7,30 @@
     <li><%= link_to(player.name, {:controller => 'player', :action => 'edit', :id => player.id}, :class => (player.turn == true ? "turn" : "")) %></li>
   <% end %>
 </ol>
+</div>
 
-<h1>Gifts</h1>
+<div class="col-md-6">
+  <div class="row">
+    <h1>Gifts</h1>
+    <table>
+    <% @gifts.each do |gift| %>
+      <tr>
+        <td><%=link_to(gift.name, {:controller => 'gift', :action => 'edit', :id => gift.id }, :class =>'action') %></td>
+        <td><%= gift.player.name %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
 
-<table>
-<% @gifts.each do |gift| %>
-  <tr>
-    <td><%=link_to(gift.name, {:controller => 'gift', :action => 'edit', :id => gift.id }, :class =>'action') %></td>
-    <td><%= gift.player.name %></td>
-  </tr>
-  <% end %>
-</table>
-
+  <div class="row">
+    <div class="col-md-6">
+      <div class="timer">
+        <span class="hour">00</span><span class="minute">01</span><span class="colon">:</span><span class="second">30</span>
+          <div class="control">
+            <button onclick="timer.start(1000)" class="button">Start</button> 
+            <button onclick="timer.stop()" class="button">Stop</button> 
+            <button onclick="timer.reset(90)" class="button">Reset</button> 
+          </div>
+      </div>
+  </div>
+</div>

@@ -14,3 +14,7 @@
  *= require bootstrap
  *= require_self
  */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
