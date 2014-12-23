@@ -1,5 +1,3 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
 <div class="banner"><h2 class="banner"><a href="/" class="home">Mattson Gift Game</a></h2></div>
 
 <div class="container">
@@ -15,6 +13,7 @@
   </div>
 
   <% end %>
+  <%= link_to("Delete", {:action => 'delete', :id => @player.id}, :class => 'back-link') %><br>
   <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 
   </div>
