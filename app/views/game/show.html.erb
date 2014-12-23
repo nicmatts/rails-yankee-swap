@@ -11,6 +11,8 @@
   </div>
 </div>
 
+
+<div id="reload"><button class="btn"><a href="/">Check for updates</a></button></div>
 <div class="row">
   <div class="container game-tv">
     <div class="col-md-5 player-list">
@@ -29,10 +31,11 @@
         <div class="gifts">
         <dl>
         <% @gifts.each do |gift| %>
-          <tr>
+          <div class="one-gift">
             <dt><%=link_to(gift.name, {:controller => 'gift', :action => 'edit', :id => gift.id }, :class =>'action') %></dt>
+            <dl id="gift-description-mobile"><%= gift.description %></dl>
             <dl><%= gift.player.name %></dl>
-          </tr>
+          </div>
           <% end %>
         </dl>
       </div>

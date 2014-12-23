@@ -81,6 +81,14 @@ table.gift-list {
   margin-top: 10px;
 }
 
+dl {
+  margin-bottom: 2px;
+}
+
+.one-gift {
+    margin-bottom: 15px;
+  }
+
 @media (min-width: 780px) {
 
   .container.game-tv {
@@ -120,4 +128,55 @@ table.gift-list {
     height: 555px;
     padding-left: 20px;
   }
+
+  #reload{
+    display: none;
+  }
+
+  #gift-description-mobile {
+    display:none;
+  }
 }
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  .control {
+    display: none;
+  }
+
+  #reload {
+    margin: 0 auto;
+    max-width: 50%;
+    text-align: center;
+  }
+
+  .player-list {
+    padding-left: 50px;
+  }
+
+  .turn {
+    border: 1px solid green;
+    padding: 2px;
+    background-color: #ccc;
+  }
+
+  .gifts {
+    -webkit-column-count: 1; /* Chrome, Safari, Opera */
+    -moz-column-count: 2;
+    column-count:         2;
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+    padding-left: 40px;
+  }
+
+  .one-gift {
+    border-bottom: 1px solid #ccc;
+    max-width: 80%;
+  }
+}
+

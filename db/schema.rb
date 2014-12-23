@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141220210237) do
+ActiveRecord::Schema.define(version: 20141223132210) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -34,11 +34,12 @@ ActiveRecord::Schema.define(version: 20141220210237) do
   end
 
   create_table "gifts", force: true do |t|
-    t.string   "name",       default: "none"
+    t.string   "name",        default: "none"
     t.integer  "player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "game_id"
+    t.text     "description"
   end
 
   create_table "players", force: true do |t|
