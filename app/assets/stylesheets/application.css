@@ -144,6 +144,10 @@ dl {
     font-size: 16px;
   }
 
+  .timer-banner, .banner {
+    display: none;
+  }
+
   .control {
     display: none;
   }
