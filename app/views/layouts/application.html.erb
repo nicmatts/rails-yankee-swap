@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Yankee Swap</title>
+  <title>Mattson Gift Game</title>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300italic' rel='stylesheet' type='text/css'>
@@ -130,12 +130,9 @@ $(document).ready(function(e)
     timer = new _timer
     (
         function(time){
-            if(time == 20){
+            if(time == 10){
                 $( ".timer-banner" ).addClass( "red-bg" );
-            } else if (time < 10 && time % 2 ==1) {
-                console.log(time);
-                $( ".timer-banner" ).toggleClass( "white-bg" );
-            }
+            } 
             else if (time == 0)    
                 timer.stop();
             } 
