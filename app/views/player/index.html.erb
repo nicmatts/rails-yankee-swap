@@ -1,15 +1,16 @@
 <div class="banner"><h2 class="banner"><a href="/" class="home">Mattson Gift Game</a></h2></div>
 
 <div class="container">
+  <div class="col-md-3 col-md-offset-5 player edit">
 
-<h1>Players</h1>
+    <h1>Players</h1>
 
-<ol>
-  <% @players.each do |player| %>
-      <li class = "<%= 'turn' if player.turn %>"><%= link_to(player.name, {:action => 'edit', :id => player.id}) %></li>
-  <% end %>
-</ol>
+    <ol>
+      <% @players.each do |player| %>
+          <li class = "<%= 'turn' if player.turn %>"><%= link_to(player.name, {:action => 'edit', :id => player.id}) %></li>
+      <% end %>
+    </ol>
 
-<%= link_to("Add new player", {:action => 'new'}, :class => 'back-link') %>
-
+    <%= link_to("Add new player", {:action => 'new'}, :class => 'back-link') %>
+  </div>
 </div>
