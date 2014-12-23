@@ -22,6 +22,7 @@
 <% end %>
 
 <script>
+
 function _timer(callback)
 {
     var time = 0;     //  The default time of the timer
@@ -64,8 +65,9 @@ function _timer(callback)
     }
     
     //  Same as the name, this will stop or pause the timer ex. timer.stop()
-    this.stop =  function()
-    {
+    this.stop =  function(){
+        document.getElementById('audiotag').play();
+
         if(status == 1)
         {
             status = 0;
@@ -123,19 +125,16 @@ function _timer(callback)
     }
 }
  
-// example use
 var timer;
 
-$(document).ready(function(e) 
-{
-    timer = new _timer
-    (
+$(document).ready(function(e) {
+    timer = new _timer(
         function(time){
             if(time == 10){
                 $( ".timer-banner" ).addClass( "red-bg" );
             } 
-            else if (time == 0)    
-                timer.stop();
+            else if (time == 0)
+                timer.stop();  
             } 
     );
     timer.reset(90);
