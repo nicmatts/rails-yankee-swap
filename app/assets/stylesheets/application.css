@@ -86,8 +86,8 @@ dl {
 }
 
 .one-gift {
-    margin-bottom: 15px;
-  }
+  margin-bottom: 15px;
+ }
 
 @media (min-width: 780px) {
 
@@ -153,19 +153,24 @@ dl {
   }
 
   #reload {
-    margin: 0 auto;
+    margin: 10px auto 0;
     max-width: 50%;
     text-align: center;
   }
 
   .player-list {
     padding-left: 50px;
+    background: #F9D8D8;
+  }
+
+  .gifts-label {
+    padding-left: 40px;
   }
 
   .turn {
     border: 1px solid green;
     padding: 2px;
-    background-color: #ccc;
+    background-color: white;
   }
 
   .gifts {
